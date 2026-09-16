@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>hello</h1>
+    <form action="">
+        <input type="text">
+        <button>submit</button>
+    </form>
+
+
+    <script>
+        let form=document.querySelector('form')
+        let input=document.querySelector('input')
+
+        //submit
+        //input
+        //change
+
+        // addEventListener("event",callback,usecapture)
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            input.value
+            // console.log("form submitted")
+            console.log(input.value)
+        })
+
+        form.addEventListener('contextmenu',(e)=>{
+            e.preventDefault()
+
+        })
+
+         form.addEventListener("input",(e)=>{
+            e.preventDefault()
+         
+           
+            console.log(input.value)
+        })
+
+         form.addEventListener("change",(e)=>{
+            e.preventDefault()
+            console.log("form change")
+            console.log(input.value)
+        })
+
+        let h1=document.querySelector('h1')
+        h1.addEventListener('click',()=>{
+            console.log('you clicked on h1')
+        })
+
+         h1.addEventListener('click',()=>{
+            console.log('you clicked on h1 twice')
+        })
+
+         h1.addEventListener('click',()=>{
+            console.log('you clicked on h1 trrice')
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 onclick="console.log('you clicked on h1')">Mouse event</h1>
+    <h3>
+        types of mouse event <br>
+        click-->onclick <br>
+        dbclick-->ondbclick <br>
+        mousemove--->onmousemove <br>
+        mouseenter-->onmouseenter
+    </h3>
+
+    <p ondblclick="console.log('double clicked on p')">double click</p>
+    <button onmousemove="console.log('mouse moveed event')">click me</button>
+    <button onmouseenter="console.log('mouse enterd')">click me2</button>
+    <button onclick='demo()'>butoon click</button>
+
+    drowback-->it effect on html strature
+               same event can n't be use muliple time
+
+    <script>
+        const demo=()=>{
+            console.log('demo exicuted')
+        }
+    </script>
+</body>
+</html>
