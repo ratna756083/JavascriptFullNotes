@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 250px;
+            width: 250px;
+            background-color: red;
+            display: flex;
+           align-items: center;
+            justify-content: center;
+        }
+        section{
+            height: 70%;
+            width: 70%;
+            background-color: blue;
+            display: flex;
+           align-items: center;
+            justify-content: center;
+        }
+        button{
+            height: 20%;
+            width: 40%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section>
+            <button>
+                Click
+            </button>
+        </section>
+    </div>
+
+    <script>
+
+        //Event Propagation is two type
+        //1.Event capturing -->parent to trigerred element
+        //2.Event Bubbling -->Triggered element to parent
+        //if you want to see event capturing then a boolean value give as parameter in addEventListerer as true
+        //bydefault it is showing event bubbling
+        let div=document.querySelector('div')
+        let section=document.querySelector('section')
+        let btn=document.querySelector('button')
+
+        div.addEventListener('click',(e)=>{
+            console.log("div is clicked")
+            // e.stopPropagation()
+        },
+    true
+)
+
+                section.addEventListener('click',(e)=>{
+            console.log("section is clicked")
+            // e.stopPropagation()
+        },
+    true 
+)
+
+                btn.addEventListener('click',(e)=>{
+            console.log("button is clicked")
+            // e.stopPropagation()
+        },
+    true 
+)
+
+
+
+
+
+    </script>
+</body>
+</html>

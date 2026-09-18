@@ -8,21 +8,52 @@
 <body>
 
     <button>click</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit magnam ad neque ullam at ea quis cupiditate facere, animi autem rem dicta dolor nostrum vero blanditiis nobis, possimus eligendi quos.</p>
 
     <script>
         let btn=document.querySelector('button')
         document.body.style.backgroundColor='black'
+              document.body.style.color='white'              
+
 
 
         btn.addEventListener('click',()=>{
             if(document.body.style.backgroundColor === 'black'){
-              document.body.style.backgroundColor='white'                
+              document.body.style.backgroundColor='white'  
+              document.body.style.color='black'              
             }else if( document.body.style.backgroundColor==='white'){
         document.body.style.backgroundColor='black'
+              document.body.style.color='white'              
+
 
             }
         })
-        console.log("hello changes")
+
+        
+
+        let arr=['alu','banana','patato']
+        let ol=document.createElement('ol')
+        for(let i=0;i<=arr.length-1;i++){
+            let li=document.createElement('li')
+            li.textContent=arr[i]
+            ol.append(li)
+            li.addEventListener('click',()=>{
+                console.log(`you clicked on ${li.textContent}`)
+            })
+        }
+
+        let l12=document.createElement('li')
+        l12.textContent="kakharu"              //if you clicked this item then event will not triggered  that is the drawback
+        ol.append(l12)
+
+        ol.addEventListener("click",(e)=>{
+            if(e.target.tagName=='LI'){
+                console.log(`you clicked on ${e.target.textContent}`)    //Event deligation
+            }
+        })
+
+        document.body.append(ol)
+       
     </script>
     
 </body>
