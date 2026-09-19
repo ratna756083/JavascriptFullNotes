@@ -92,13 +92,52 @@
 
 
 
+
+
+
+
+
+//?Promise Chaining :usages of multiple then() blocks
+
+//to Overcome
+
+//Use-->async await
+//keywords
+//ES-6 version 
+//perform asynchronous operations
+
+
 const fetchData=async()=>{
-  const data=  await fetch("https://fakestoreapi.com/products")
-  return data.json()
+  try {
+    const data=  await fetch("https://fakestoreapi.com/products")
+  const product=await data.json()
+  product.forEach(elem=>{
+    let img=document.createElement('img')
+    img.src=elem.image
+    let title=document.createElement('h3')
+    title.textContent=elem.title.slice(0,26)
+
+    let price=document.createElement('h2')
+    price.textContent=elem.price
+
+    let desc=document.createElement('p')
+    desc.textContent=elem.description
+
+    div.append(img,title,price,desc)
+   })
+    
+  } catch (error) {
+    console.log(error)
+    
+  }
 }
 
-const getData=async()=>{
-    const product=await fetchData()
-    console.log(product)
-}
-getData()
+fetchData()
+
+const div=document.createElement('div')
+
+
+
+document.body.append(div)
+
+
